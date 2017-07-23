@@ -46,12 +46,14 @@
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(624, 416);
+            this.label1.Location = new System.Drawing.Point(608, 416);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 6;
@@ -61,6 +63,7 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.smile);
+            this.panel1.Controls.Add(this.tank1);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(571, 453);
@@ -69,18 +72,20 @@
             // smile
             // 
             this.smile.Image = global::WinFormTest.Properties.Resources._1497881345_smiley__18;
-            this.smile.Location = new System.Drawing.Point(247, 162);
+            this.smile.Location = new System.Drawing.Point(136, 162);
+            this.smile.Margin = new System.Windows.Forms.Padding(0);
             this.smile.Name = "smile";
-            this.smile.Size = new System.Drawing.Size(65, 71);
+            this.smile.Size = new System.Drawing.Size(65, 65);
             this.smile.TabIndex = 7;
             this.smile.TabStop = false;
             // 
             // tank1
             // 
             this.tank1.Image = global::WinFormTest.Properties.Resources._1497804241_gaming_game_play_multimedia_console_36;
-            this.tank1.Location = new System.Drawing.Point(594, 12);
+            this.tank1.Location = new System.Drawing.Point(0, 0);
+            this.tank1.Margin = new System.Windows.Forms.Padding(0);
             this.tank1.Name = "tank1";
-            this.tank1.Size = new System.Drawing.Size(67, 58);
+            this.tank1.Size = new System.Drawing.Size(65, 55);
             this.tank1.TabIndex = 5;
             this.tank1.TabStop = false;
             // 
@@ -147,7 +152,6 @@
             this.ClientSize = new System.Drawing.Size(730, 457);
             this.Controls.Add(this.start);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tank1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.down);
             this.Controls.Add(this.right);

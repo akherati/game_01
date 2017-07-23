@@ -12,27 +12,71 @@ namespace WinFormTest
 {
     public partial class Form1 : Form
     {
-        private Random _random;
+
         public Form1()
         {
             InitializeComponent();
-            _random = new Random();
-        }
 
+        }
+        public Random rnd = new Random();
+
+        public int x = new Random().Next(0, 20);
+        public int y = new Random().Next(0, 20);
         private void Timer_Tick(object sender, EventArgs e)
         {
             label1.Text = DateTime.Now.ToString();
 
-            int x = _random.Next(0, 50);
-            int y = _random.Next(0, 50);
+
+            //int x = rnd.Next(0, 500);
+            //int y = rnd.Next(0, 500);
+
+            //tank1.Location = new Point(0,100); 
+
+            //tank1.Location = new Point((int)(new Random().Next(0, 1025)), (int)(new Random().Next(0, 545)));
+
+            //tank1.Top += rnd.Next();
+            //tank1.Left += rnd.Next();
+
 
             tank1.Top += y;
             tank1.Left += x;
 
-            if (x >= this.Width || y >= this.Height)
+
+
+            //       if (tank1.Left >= panel1.Width || tank1.Top >= panel1.Height)
+            if (tank1.Location.X >= panel1.Width - tank1.Width)
             {
-                timer1.Stop();
+                //timer1.Stop();
+                x = rnd.Next(-10, 0);
+                y = rnd.Next(0, 10);
+
             }
+            else if (tank1.Location.Y >= panel1.Height - tank1.Height)
+            {
+
+                x = rnd.Next(0,10);
+                y = rnd.Next(-10,0);
+            }
+
+            else if (tank1.Location.Y <= 0)
+            {
+                x = rnd.Next(-10, 0);
+                y = rnd.Next(0, 10);
+            }
+
+            else if (tank1.Location.X <= 0)
+            {
+                x = rnd.Next(0, 10);
+                y = rnd.Next(0, 10);
+            }
+
+
+
+
+
+
+
+
 
         }
 
